@@ -16,6 +16,6 @@ int main()
         }
 
     }
-    cout<<endl<<sum<<endl;
+    cout<<sum<<endl;
     return 0;
 }
