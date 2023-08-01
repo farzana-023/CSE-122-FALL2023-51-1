@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int M,N;
+    cin>>M>>N;
+
+    int equation;
+
+    equation = (M * N)/2;
+
+    cout<<equation;
+
+    return 0;
+}
