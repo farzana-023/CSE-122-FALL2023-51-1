@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string m;
+    string n;
+    cin>>m>>n;
+
+    int x = m.length();
+    int y = n.length();
+
+    for (int i=0; i<x; i++)
+    {
+        if( m[i] >= 'a' && m[i]<= 'z' )
+        {
+            m[i] = m[i] - 32;
+        }
+    }
+ //converting all letter to uppercase letter
+    for (int i=0; i<y; i++)
+    {
+        if( n[i] >= 'a' && n[i]<= 'z' )
+        {
+            n[i] = n[i] - 32;
+        }
+    }
+    if( m<n )
+    {
+        cout<<-1;
+    }
+    else if ( m>n )
+    {
+        cout<<1;
+    }
+    else if ( m==n )
+    {
+        cout<<0;
+    }
+    return 0;
+}
