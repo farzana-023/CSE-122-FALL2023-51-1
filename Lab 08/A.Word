@@ -1,0 +1,51 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string name;
+    cin>>name;
+
+    int count = 0;
+    int count_2 = 0;
+
+    for(int i=0; i<= name.size(); i++ )
+    {
+        if (name[i] >= 'A' && name[i] <= 'Z')
+        {
+            count++;
+
+        }
+        else if (name[i] >= 'a' && name[i] <= 'z')
+        {
+            count_2++;
+        }
+    }
+    if ( count > count_2)
+    {
+        for(int i=0; i<= name.size(); i++ )
+     {
+         name[i] = toupper(name[i]);
+     }
+     cout<<name<<endl;
+    }
+    else  if ( count < count_2)
+    {
+        for(int i=0; i<= name.size(); i++ )
+     {
+         name[i] = tolower(name[i]);
+     }
+     cout<<name<<endl;
+    }
+    else  if ( count == count_2)
+    {
+        for(int i=0; i<= name.size(); i++ )
+     {
+         name[i] = tolower(name[i]);
+     }
+     cout<<name<<endl;
+    }
+
+return 0;
+
+}
