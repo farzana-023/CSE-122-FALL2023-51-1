@@ -12,7 +12,7 @@ int main() {
     for (int i = 0; i < x; i++) {
         cin >> outgoing;
         cin >> entering;
-        passenger += entering - outgoing;
+        passenger = passenger + ( entering - outgoing );
         if (passenger > maximum) {
             maximum = passenger;
         }
