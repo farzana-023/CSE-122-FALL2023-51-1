@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int x;
+    cin >> x;
+    int entering, outgoing;
+    int passenger = 0;
+    int maximum = 0;
+
+    for (int i = 0; i < x; i++) {
+        cin >> outgoing;
+        cin >> entering;
+        passenger += entering - outgoing;
+        if (passenger > maximum) {
+            maximum = passenger;
+        }
+    }
+
+    cout << maximum << endl;
+
+    return 0;
+}
