@@ -17,9 +17,7 @@ public:
 
     Compare(double a, double b, double c)
     {
-        F = a;
-        F = b;
-        F = c;
+        
       F = max(max(a, b), c);
 
     }
