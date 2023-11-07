@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+class Compare
+{
+public:
+    int I=0;
+    char C='\0';
+    double F=0.0;
+
+    Compare(int a, int b, int c)
+    {
+
+    I = max(max(a, b), c);
+
+    }
+
+    Compare(double a, double b, double c)
+    {
+        F = a;
+        F = b;
+        F = c;
+      F = max(max(a, b), c);
+
+    }
+
+    Compare(char a, char b, char c)
+    {
+
+        C = max(max(a, b), c);
+    }
+};
+
+void display(const Compare object)
+{
+    if (object.I)
+    {
+        cout << "The greatest Integer is  : "<<object.I << endl;
+    }
+    if (object.F)
+    {
+        cout << "The greatest Float is    : "<<object.F << endl;
+    }
+    if (object.C)
+    {
+        cout << "The greatest Charecter is: "<<object.C << endl;
+    }
+}
+
+int main()
+{
+    Compare Integer(20, 30, 80);
+    Compare Character('A', 'B', 'Z');
+    Compare Float(19.9, 29.9, 39.9);
+
+    display(Integer);
+    display(Character);
+    display(Float);
+
+    return 0;
+}
