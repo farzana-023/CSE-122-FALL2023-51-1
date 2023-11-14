@@ -1,0 +1,75 @@
+#include <iostream>
+#include <cassert>
+using namespace std;
+
+class Fraction
+{
+public:
+    int numerator;
+    int denominator;
+
+
+    Fraction(int num, int den)
+    {
+        assert(typeid(num) == typeid(int));
+        assert(typeid(den) == typeid(int));
+
+        assert(den != 0);
+
+
+        numerator = num;
+        denominator = den;
+    }
+
+    int calculateGCD(int a, int b)
+    {
+        while (b != 0)
+        {
+            int temp = b;
+
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+
+    void reduce()
+    {
+        int gcd = calculateGCD(numerator, denominator);
+        numerator = numerator/ gcd;
+        denominator =denominator/gcd;
+    }
+
+    // Human-readable
+    string __str__()
+    {
+        return to_string(numerator) + "/" + to_string(denominator);
+    }
+
+    // Programmer Representation
+    string __repl__()
+    {
+        return "Fraction(" + to_string(numerator) + ", " + to_string(denominator) + ")";
+    }
+
+
+};
+
+int main()
+{
+    Fraction obj(25,65);
+
+    cout<<"Real Value:"<<endl;
+    cout<<"Human : "<<obj.__str__()<<endl;
+    cout<<"Programmer : "<<obj.__repl__()<<endl;
+
+    cout<<endl;
+
+    obj.reduce();
+    cout<<"After reduce function:"<<endl;
+    cout<<"Human : "<<obj.__str__()<<endl;
+    cout<<"Programmer : "<<obj.__repl__()<<endl;
+
+    return 0;
+}
